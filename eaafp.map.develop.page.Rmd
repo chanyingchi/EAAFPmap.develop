@@ -38,5 +38,8 @@ library(rmarkdown)
 paged_table(d.in[,c(1:4,8:12)], options = list(rows.print = 20))
 ```
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
 
