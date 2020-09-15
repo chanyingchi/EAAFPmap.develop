@@ -1,0 +1,42 @@
+---
+title: "EAAFP interactive map developing page"
+author: "YCChan"
+date: "9/15/2020"
+output: html_document
+---
+
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+
+---
+This site is for development purpose.
+
+Bar-tailed Godwit distribution map
+---
+
+```{r include=FALSE, fig.height=7}
+source('C:/Users/chan/work/Company/EAAFP species dist map/EAAFP map app/server.R')
+datapath<-('C:/Users/chan/work/Company/EAAFP species dist map/species dist data/')
+ d.in<-
+      read_excel(paste(datapath,'d.btg.all.input.xlsx',sep=''),col_types=c(rep( "guess",3),'text',rep( "guess",8)))
+    d.in$subsp[d.in$subsp=='NA']<-NA
+    circle.size=5
+    d.in$circle.size<-(1.5+circle.size/10)+(log10(1+(d.in$max.count/min(d.in$max.count))*5)*(1+circle.size/8))
+make.map(d.in)
+    
+
+```
+
+---
+Bar-tailed Godwit data
+
+```{r echo=FALSE,layout="l-body-outset"}
+library(rmarkdown)
+paged_table(d.in[,c(1:4,8:12)], options = list(rows.print = 20))
+```
+
+
+
