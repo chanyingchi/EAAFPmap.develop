@@ -27,7 +27,7 @@ Here you can see the maps containing the data we have collected so far. After we
 source('C:/Users/chan/work/Company/EAAFP species dist map/EAAFP map app/server.R')
 datapath<-('C:/Users/chan/work/Company/EAAFP species dist map/species dist data/')
  d.in<-
-      read_excel(paste(datapath,'d.btg.all.input.xlsx',sep=''),col_types=c(rep( "guess",3),'text',rep( "guess",8)))
+      read_excel(paste(datapath,'d.btg.all.input.inc.new.data.xlsx',sep=''),col_types=c(rep( "guess",3),'text',rep( "guess",8)))
     d.in$subsp[d.in$subsp=='NA']<-NA
     circle.size=5
     d.in$circle.size<-(1.5+circle.size/10)+(log10(1+(d.in$max.count/min(d.in$max.count))*5)*(1+circle.size/8))
@@ -58,7 +58,7 @@ datatable(d.in[,c(1:4,8:12)])
 source('C:/Users/chan/work/Company/EAAFP species dist map/EAAFP map app/server.R')
 datapath<-('C:/Users/chan/work/Company/EAAFP species dist map/species dist data/')
  d.fec<-
-      read_excel(paste(datapath,'d.fec.all.input.xlsx',sep=''),col_types=c(rep( "guess",3),'text',rep( "guess",8)))
+      read_excel(paste(datapath,'d.fec.all.input.inc.new.data.xlsx',sep=''),col_types=c(rep( "guess",3),'text',rep( "guess",8)))
  d.in<-d.fec
     d.in$subsp[d.in$subsp=='NA']<-NA
     circle.size=5
@@ -85,7 +85,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 Data sources:
-Korean Shorebird Network
+Korean Shorebird Network (data compiled by Andreas Kim)
 Conklin, J. R., Verkuil, Y.	I., & Smith, B. R. (2014).	Prioritizing migratory shorebirds for conservation: Action on the East Asian-Australasian flyway. WWF‐Hong Kong.
 Jaensch, R. (2013). New tools for development of the flyway site network: An integrated and updated list of candidate sites and guidance on prioritisation. Report to Partnership for the East Asian–Australasian Flyway. 
 Chan, Y. C., Peng, H. B., Han, Y. X., Chung, S. S. W., Li, J., Zhang, L., & Piersma, T. (2019). Conserving unprotected important coastal habitats in the Yellow Sea: shorebird occurrence, distribution and food resources at Lianyungang. Global Ecology and Conservation, 20, e00724.
