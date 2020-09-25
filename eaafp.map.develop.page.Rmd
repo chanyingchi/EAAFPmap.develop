@@ -88,7 +88,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ***
 Data sources:
 
-Korean Shorebird Network (data compiled by Andreas Kim)
+Korean Shorebird Network 2011-2015. Shorebird Monitoring Report of Korea. (data compiled by Andreas Kim)
+<br>
+Unpublished data of National Institute for Biological Resources, South Korea.
 <br>
 Conklin, J. R., Verkuil, Y.	I., & Smith, B. R. (2014).	Prioritizing migratory shorebirds for conservation: Action on the East Asian-Australasian flyway. WWF‐Hong Kong.
 <br>
