@@ -85,7 +85,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 Data sources:
-Andreas Kim
+Korean Shorebird Network
 Conklin, J. R., Verkuil, Y.	I., & Smith, B. R. (2014).	Prioritizing migratory shorebirds for conservation: Action on the East Asian-Australasian flyway. WWF‐Hong Kong.
 Jaensch, R. (2013). New tools for development of the flyway site network: An integrated and updated list of candidate sites and guidance on prioritisation. Report to Partnership for the East Asian–Australasian Flyway. 
 Chan, Y. C., Peng, H. B., Han, Y. X., Chung, S. S. W., Li, J., Zhang, L., & Piersma, T. (2019). Conserving unprotected important coastal habitats in the Yellow Sea: shorebird occurrence, distribution and food resources at Lianyungang. Global Ecology and Conservation, 20, e00724.
