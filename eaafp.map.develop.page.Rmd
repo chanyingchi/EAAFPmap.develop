@@ -41,6 +41,7 @@ m
 
 
 Bar-tailed Godwit data:
+
 Flyway population estimate: 279,000
 
 ```{r echo=FALSE,layout="l-body-outset"}
@@ -72,6 +73,7 @@ m
 ```
 
 Far Eastern Curlew data:
+
 Flyway population estimate: 32,000
 ```{r echo=FALSE,layout="l-body-outset"}
 library(DT)
@@ -85,7 +87,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 Data sources:
+
 Korean Shorebird Network (data compiled by Andreas Kim)
+<br>
 Conklin, J. R., Verkuil, Y.	I., & Smith, B. R. (2014).	Prioritizing migratory shorebirds for conservation: Action on the East Asian-Australasian flyway. WWF‐Hong Kong.
-Jaensch, R. (2013). New tools for development of the flyway site network: An integrated and updated list of candidate sites and guidance on prioritisation. Report to Partnership for the East Asian–Australasian Flyway. 
+<br>
+Jaensch, R. (2013). New tools for development of the flyway site network: An integrated and updated list of candidate sites and guidance on prioritisation. Report to Partnership for the East Asian–Australasian Flyway.
+<br>
 Chan, Y. C., Peng, H. B., Han, Y. X., Chung, S. S. W., Li, J., Zhang, L., & Piersma, T. (2019). Conserving unprotected important coastal habitats in the Yellow Sea: shorebird occurrence, distribution and food resources at Lianyungang. Global Ecology and Conservation, 20, e00724.
