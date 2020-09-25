@@ -13,8 +13,13 @@ knit: (function(input_file, encoding) {
 ---
 This site is for development purpose.
 
-Bar-tailed Godwit distribution map
+Counts of > 0.25% of the EAAF population of a species is displayed.
 
+Template for submitting your count data can be downloaded here]( https://github.com/chanyingchi/EAAFPmap.develop/raw/master/count.data.submit.template.xlsx)
+
+
+
+Bar-tailed Godwit distribution map
 
 ```{r include=FALSE}
 source('C:/Users/chan/work/Company/EAAFP species dist map/EAAFP map app/server.R')
@@ -43,8 +48,9 @@ datatable(d.in[,c(1:4,8:12)])
 
 
 
-Far Eastern curlew distribution map:
 
+
+Far Eastern curlew distribution map:
 
 ```{r include=FALSE}
 source('C:/Users/chan/work/Company/EAAFP species dist map/EAAFP map app/server.R')
