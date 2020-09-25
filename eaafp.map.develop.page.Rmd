@@ -13,13 +13,15 @@ knit: (function(input_file, encoding) {
 ---
 This site is for development purpose.
 
-Counts of > 0.25% of the EAAF population of a species is displayed.
+Counts of > 0.25% of the EAAF population size estimate of a species is displayed.
 
-Template for submitting your count data can be downloaded here]( https://github.com/chanyingchi/EAAFPmap.develop/raw/master/count.data.submit.template.xlsx)
+Template for submitting your count data can be downloaded [here.](https://github.com/chanyingchi/EAAFPmap.develop/raw/master/count.data.submit.template.xlsx)
 
 
+Here you can see the maps containing the data we have collected so far. After we have received your data, We will update it as soon as we can!
 
-Bar-tailed Godwit distribution map
+***
+## Bar-tailed Godwit distribution map
 
 ```{r include=FALSE}
 source('C:/Users/chan/work/Company/EAAFP species dist map/EAAFP map app/server.R')
@@ -39,6 +41,7 @@ m
 
 
 Bar-tailed Godwit data:
+Flyway population estimate: 279,000
 
 ```{r echo=FALSE,layout="l-body-outset"}
 library(DT)
@@ -47,10 +50,9 @@ datatable(d.in[,c(1:4,8:12)])
 ```
 
 
+***
 
-
-
-Far Eastern curlew distribution map:
+## Far Eastern curlew distribution map:
 
 ```{r include=FALSE}
 source('C:/Users/chan/work/Company/EAAFP species dist map/EAAFP map app/server.R')
@@ -70,7 +72,7 @@ m
 ```
 
 Far Eastern Curlew data:
-
+Flyway population estimate: 32,000
 ```{r echo=FALSE,layout="l-body-outset"}
 library(DT)
 d.fec<-d.fec[order(d.fec$lat),]
@@ -80,3 +82,10 @@ datatable(d.fec[,c(1:4,8:12)])
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+***
+Data sources:
+Andreas Kim
+Conklin, J. R., Verkuil, Y.	I., & Smith, B. R. (2014).	Prioritizing migratory shorebirds for conservation: Action on the East Asian-Australasian flyway. WWF‐Hong Kong.
+Jaensch, R. (2013). New tools for development of the flyway site network: An integrated and updated list of candidate sites and guidance on prioritisation. Report to Partnership for the East Asian–Australasian Flyway. 
+Chan, Y. C., Peng, H. B., Han, Y. X., Chung, S. S. W., Li, J., Zhang, L., & Piersma, T. (2019). Conserving unprotected important coastal habitats in the Yellow Sea: shorebird occurrence, distribution and food resources at Lianyungang. Global Ecology and Conservation, 20, e00724.
