@@ -44,7 +44,7 @@ Bar-tailed Godwit data:
 
 Flyway population estimate: 279,000
 
-```{r echo=FALSE,layout="l-body-outset"}
+```{r echo=FALSE, r message=FALSE, layout="l-body-outset"}
 library(DT)
 d.in<-d.in[order(d.in$lat),]
 datatable(d.in[,c(1:4,8:12)])
