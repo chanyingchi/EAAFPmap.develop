@@ -1,7 +1,7 @@
 ---
 title: "EAAFP interactive map development page"
 author: "YCChan"
-date: "9/15/2020"
+date: "5/10/2020"
 output: html_document
 
 knit: (function(input_file, encoding) {
@@ -18,12 +18,13 @@ Counts of > 0.25% of the EAAF population size estimate of a species is displayed
 Template for submitting your count data can be downloaded [here.](https://github.com/chanyingchi/EAAFPmap.develop/raw/master/count.data.submit.template.xlsx)
 
 
-Here you can see the maps containing the data we have collected so far. After we have received your data, We will update it as soon as we can!
+Here you can see the maps containing the data we received so far. After we have received your data, We will update it as soon as we can!
 
 ***
 ## Bar-tailed Godwit distribution map
 
 ```{r include=FALSE}
+library(DT)
 source('C:/Users/chan/work/Company/EAAFP species dist map/EAAFP map app/server.R')
 datapath<-('C:/Users/chan/work/Company/EAAFP species dist map/species dist data/')
  d.in<-
@@ -44,8 +45,8 @@ Bar-tailed Godwit data:
 
 Flyway population estimate: 279,000
 
-```{r echo=FALSE, r message=FALSE, layout="l-body-outset"}
-library(DT)
+```{r echo=FALSE, layout="l-body-outset"}
+
 d.in<-d.in[order(d.in$lat),]
 datatable(d.in[,c(1:4,8:12)])
 ```
@@ -91,6 +92,10 @@ Data sources:
 Korean Shorebird Network 2011-2015. Shorebird Monitoring Report of Korea. (data compiled by Andreas Kim)
 <br>
 Unpublished data of National Institute for Biological Resources, South Korea.
+<br>
+MYSMA database: Rogers, D.I., Scroggie, M.P. and Hassell, C.J. 2020. Review of long-term shorebird monitoring in north western Australia. Arthur Rylah Institute for Environmental Research Technical Report Series No. 313.
+<br>
+Ornithological Society of New Zealand. Wader Census database.
 <br>
 Conklin, J. R., Verkuil, Y.	I., & Smith, B. R. (2014).	Prioritizing migratory shorebirds for conservation: Action on the East Asian-Australasian flyway. WWF‐Hong Kong.
 <br>
