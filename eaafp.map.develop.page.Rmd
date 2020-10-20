@@ -21,6 +21,7 @@ Template for submitting your count data can be downloaded [here.](https://github
 Here you can see the maps containing the data we received so far. After we have received your data, We will update it as soon as we can!
 
 ***
+
 ## Black-faced Spoonbill distribution map
 
 ```{r include=FALSE}
@@ -51,6 +52,7 @@ d.bfs<-d.bfs[order(d.bfs$lat),]
 datatable(d.bfs[,c(1:4,8:12)])
 ```
 ***
+
 Data sources:
 
 Hong Kong Bird Watching Society. International BFS Census Report 2011-2020 (data compiled by Yu Yat-Tung)
@@ -67,7 +69,8 @@ library(DT)
 source('C:/Users/chan/work/Company/EAAFP species dist map/EAAFP map app/server.R')
 datapath<-('C:/Users/chan/work/Company/EAAFP species dist map/species dist data/')
  d.in<-
-      read_excel(paste(datapath,'d.btg.all.input.inc.new.data.xlsx',sep=''),col_types=c(rep( "guess",2),'numeric','text',rep( "guess",8)))
+      read_excel(paste(datapath,'d.btg.all.input.inc.new.data.xlsx',sep=''),col_types=c(rep( "guess",3),'text',rep( "guess",8)))
+ d.in$max.count<-as.numeric(d.in$max.count)
     d.in$subsp[d.in$subsp=='NA']<-NA
     circle.size=5
     d.in$circle.size<-(1.5+circle.size/10)+(log10(1+(d.in$max.count/min(d.in$max.count))*5)*(1+circle.size/8))
@@ -87,6 +90,8 @@ Flyway population estimate: 279,000
 ```{r echo=FALSE, layout="l-body-outset"}
 
 d.in<-d.in[order(d.in$lat),]
+d.in$lat<-round(as.numeric(d.in$lat),3)
+d.in$lon<-round(as.numeric(d.in$lon),3)
 datatable(d.in[,c(1:4,8:12)])
 ```
 
@@ -99,8 +104,9 @@ datatable(d.in[,c(1:4,8:12)])
 source('C:/Users/chan/work/Company/EAAFP species dist map/EAAFP map app/server.R')
 datapath<-('C:/Users/chan/work/Company/EAAFP species dist map/species dist data/')
  d.fec<-
-      read_excel(paste(datapath,'d.fec.all.input.inc.new.data.xlsx',sep=''),col_types=c(rep( "guess",2),'numeric','text',rep( "guess",8)))
+      read_excel(paste(datapath,'d.fec.all.input.inc.new.data.xlsx',sep=''),col_types=c(rep( "guess",3),'text',rep( "guess",8)))
  d.in<-d.fec
+ d.in$max.count<-as.numeric(d.in$max.count)
     d.in$subsp[d.in$subsp=='NA']<-NA
     circle.size=5
     d.in$circle.size<-(1.5+circle.size/10)+(log10(1+(d.in$max.count/min(d.in$max.count))*5)*(1+circle.size/8))
@@ -118,6 +124,8 @@ Flyway population estimate: 32,000
 ```{r echo=FALSE,layout="l-body-outset"}
 library(DT)
 d.fec<-d.fec[order(d.fec$lat),]
+d.fec$lat<-round(as.numeric(d.fec$lat),3)
+d.fec$lon<-round(as.numeric(d.fec$lon),3)
 datatable(d.fec[,c(1:4,8:12)])
 ```
 
@@ -127,17 +135,27 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 Data sources:
+<br>
+Chan, Y. C., Peng, H. B., Han, Y. X., Chung, S. S. W., Li, J., Zhang, L., & Piersma, T. (2019). Conserving unprotected important coastal habitats in the Yellow Sea: shorebird occurrence, distribution and food resources at Lianyungang. Global Ecology and Conservation, 20, e00724.
+<br>
+
+Conklin, J. R., Verkuil, Y.	I., & Smith, B. R. (2014).	Prioritizing migratory shorebirds for conservation: Action on the East Asian-Australasian flyway. WWF‐Hong Kong.
+<br>
+
+Jaensch, R. (2013). New tools for development of the flyway site network: An integrated and updated list of candidate sites and guidance on prioritisation. Report to Partnership for the East Asian–Australasian Flyway.
+<br>
 
 Korean Shorebird Network 2011-2015. Shorebird Monitoring Report of Korea. (data compiled by Andreas Kim)
 <br>
-Unpublished data of National Institute for Biological Resources, South Korea.
-<br>
+
 MYSMA database: Rogers, D.I., Scroggie, M.P. and Hassell, C.J. 2020. Review of long-term shorebird monitoring in north western Australia. Arthur Rylah Institute for Environmental Research Technical Report Series No. 313.
 <br>
+
 Ornithological Society of New Zealand. Wader Census database.
 <br>
-Conklin, J. R., Verkuil, Y.	I., & Smith, B. R. (2014).	Prioritizing migratory shorebirds for conservation: Action on the East Asian-Australasian flyway. WWF‐Hong Kong.
+
+Ruthrauff, D. R., Pohlen, Z. M. and Wilson, H. M., 2020, Aerial surveys of shorebirds at pre-migratory staging sites in western Alaska, 2018-2019: U.S. Geological Survey data release, https://doi.org/10.5066/P9ZS5Y6N.
 <br>
-Jaensch, R. (2013). New tools for development of the flyway site network: An integrated and updated list of candidate sites and guidance on prioritisation. Report to Partnership for the East Asian–Australasian Flyway.
+
+Unpublished data of National Institute for Biological Resources, South Korea.
 <br>
-Chan, Y. C., Peng, H. B., Han, Y. X., Chung, S. S. W., Li, J., Zhang, L., & Piersma, T. (2019). Conserving unprotected important coastal habitats in the Yellow Sea: shorebird occurrence, distribution and food resources at Lianyungang. Global Ecology and Conservation, 20, e00724.
