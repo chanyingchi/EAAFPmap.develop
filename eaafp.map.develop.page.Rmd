@@ -1,7 +1,7 @@
 ---
 title: "EAAFP interactive map development page"
 author: "YCChan"
-date: "5/10/2020"
+date: "20/10/2020"
 output: html_document
 
 knit: (function(input_file, encoding) {
@@ -21,6 +21,45 @@ Template for submitting your count data can be downloaded [here.](https://github
 Here you can see the maps containing the data we received so far. After we have received your data, We will update it as soon as we can!
 
 ***
+## Black-faced Spoonbill distribution map
+
+```{r include=FALSE}
+library(DT)
+source('C:/Users/chan/work/Company/EAAFP species dist map/EAAFP map app/server.R')
+datapath<-('C:/Users/chan/work/Company/EAAFP species dist map/species dist data/')
+ d.bfs<-
+      read_excel(paste(datapath,'d.bfs.xlsx',sep=''),col_types=c(rep( "guess",3),'text',rep( "guess",8)))
+ d.in<-d.bfs
+    d.in$subsp[d.in$subsp=='NA']<-NA
+    circle.size=5
+    d.in$circle.size<-(1.5+circle.size/10)+(log10(1+(d.in$max.count/min(d.in$max.count))*5)*(1+circle.size/8))
+m<-make.map(d.in)
+
+```
+
+```{r echo=FALSE, fig.height = 7}
+m
+```
+Note: Non-breeding sites with a population >0.25% in at least 5 years within the period of 2011-2020 are included in this map. An exception is Xuanmun Bay of Zhejiang Province, where large numbers of Black-faced Spoonbill were counted in recent years.
+
+
+Black-faced Spoonbill data:
+
+```{r echo=FALSE, layout="l-body-outset"}
+
+d.bfs<-d.bfs[order(d.bfs$lat),]
+datatable(d.bfs[,c(1:4,8:12)])
+```
+***
+Data sources:
+
+Hong Kong Bird Watching Society. International BFS Census Report 2011-2020 (data compiled by Yu Yat-Tung)
+
+Jung-Hoon Kang, In Kyu Kim, Ki-Sup Lee, Hansoo Lee & Shin-Jae Rhim (2016) Distribution, breeding status, and conservation of the black-faced spoonbill (Platalea minor) in South Korea, Forest Science and Technology, 12:3, 162-166, DOI:
+10.1080/21580103.2015.1090483
+
+***
+
 ## Bar-tailed Godwit distribution map
 
 ```{r include=FALSE}
@@ -28,7 +67,7 @@ library(DT)
 source('C:/Users/chan/work/Company/EAAFP species dist map/EAAFP map app/server.R')
 datapath<-('C:/Users/chan/work/Company/EAAFP species dist map/species dist data/')
  d.in<-
-      read_excel(paste(datapath,'d.btg.all.input.inc.new.data.xlsx',sep=''),col_types=c(rep( "guess",3),'text',rep( "guess",8)))
+      read_excel(paste(datapath,'d.btg.all.input.inc.new.data.xlsx',sep=''),col_types=c(rep( "guess",2),'numeric','text',rep( "guess",8)))
     d.in$subsp[d.in$subsp=='NA']<-NA
     circle.size=5
     d.in$circle.size<-(1.5+circle.size/10)+(log10(1+(d.in$max.count/min(d.in$max.count))*5)*(1+circle.size/8))
@@ -60,7 +99,7 @@ datatable(d.in[,c(1:4,8:12)])
 source('C:/Users/chan/work/Company/EAAFP species dist map/EAAFP map app/server.R')
 datapath<-('C:/Users/chan/work/Company/EAAFP species dist map/species dist data/')
  d.fec<-
-      read_excel(paste(datapath,'d.fec.all.input.inc.new.data.xlsx',sep=''),col_types=c(rep( "guess",3),'text',rep( "guess",8)))
+      read_excel(paste(datapath,'d.fec.all.input.inc.new.data.xlsx',sep=''),col_types=c(rep( "guess",2),'numeric','text',rep( "guess",8)))
  d.in<-d.fec
     d.in$subsp[d.in$subsp=='NA']<-NA
     circle.size=5
