@@ -1,7 +1,7 @@
 ---
 title: "EAAFP interactive map development page"
 author: "YCChan"
-date: "20/10/2020"
+date: "4/12/2020"
 output: html_document
 
 knit: (function(input_file, encoding) {
@@ -57,7 +57,11 @@ Data sources:
 
 Hong Kong Bird Watching Society. International BFS Census Report 2011-2020 (data compiled by Yu Yat-Tung)
 
-Jung-Hoon Kang, In Kyu Kim, Ki-Sup Lee, Hansoo Lee & Shin-Jae Rhim (2016) Distribution, breeding status, and conservation of the black-faced spoonbill (Platalea minor) in South Korea, Forest Science and Technology, 12:3, 162-166, DOI:
+Choi, et.al. 2020. China Coastal Waterbird Census Report  (Jan. 2012 - Dec. 2019). Hong Kong: Hong Kong Bird Watching Society
+
+Chong, JR. 2014. A Survey of Black-faced Spoonbill <i>Platalea minor</i> in the Korean Yellow Sea, summer 2012. Hong Kong Bird Report 2012. pp: 308-322. Hong Kong Bird Watching Society. Hong Kong.
+
+Kang J-H, Kim I K, Lee K-S, Lee H & Rhim S-J (2016) Distribution, breeding status, and conservation of the black-faced spoonbill (Platalea minor) in South Korea, Forest Science and Technology, 12:3, 162-166, DOI:
 10.1080/21580103.2015.1090483
 
 ***
